@@ -45,6 +45,14 @@ Executar as migrações no banco de dados (**defina a conexão com o banco de da
 
     php artisan migrate
 
+Cria usuário com email: admin@admin.com senha: admin
+
+    php artisan db:seed --class=UserSeeder
+    
+Cria registros de urls encurtadas 
+
+    php artisan db:seed --class=UrlSeeder
+
 Iniciar o servidor de desenvolvimento local
 
     php artisan serve
@@ -58,11 +66,13 @@ Acessar o servidor em http://127.0.0.1:8000
     composer install
     npm install && npm run dev
     cp .env.example .env
-    php artisan key:generate
+    php artisan key:generate    
     
 **Certifique-se de definir as informações de conexão do banco de dados antes de executar as migrações**
 
     php artisan migrate
+    php artisan db:seed --class=UserSeeder
+    php artisan db:seed --class=UrlSeeder
     php artisan serve
 
 Link da documentação no Postman https://documenter.getpostman.com/view/1162481/TzeXkT3a 
